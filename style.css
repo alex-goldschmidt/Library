@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+* {
+    margin: 5px;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+}
+
+.container .overlay {
+    text-align: center;
+    border: solid;
+}
+
+#form {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    border: solid;
+}
+
+.add-book {
+    margin-left:47%;
+    margin-right:47%;
+    position: relative;
+}
+

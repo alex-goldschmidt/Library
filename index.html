@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">Library</div>
+    </div>
+    
+<button class="add-book">+ Add Book</button>
+
+        <div class="container">
+            <div class="modal-overlay" >
+                <form id="form" class="modal" method="post" onsubmit="return false">
+                        <label for="title"></label>
+                        <input type="text" id="title"  name="title" placeholder="Title" required>
+            
+                        <label for="author"></label>
+                        <input type="text" id="author" name="author" placeholder="Author" required>
+                    
+                        <label for="pages"></label>
+                        <input type="text" id="pages" name="pages" placeholder="Pages" required>
+                            
+                        <input class="submit" type="submit">
+                </form>
+            </div>
+        </div>
+        <script src="main.js"></script>
+</body>
+</html>
