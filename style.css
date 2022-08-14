@@ -26,8 +26,16 @@
 }
 
 .add-book {
-    margin-left:47%;
+    margin-left:47.2%;
     margin-right:47%;
     position: relative;
+}
+
+.book-card {
+    display: none;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    border: solid;
 }
 
