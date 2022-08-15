@@ -15,7 +15,7 @@
 <button class="add-book">Add Book</button>
 
         <div class="container">
-            <div class="modal-overlay" >
+            <div class="books-wrapper">
                 <form id="form" class="modal" method="post" onsubmit="return false">
                         <label for="title"></label>
                         <input type="text" id="title"  name="title" placeholder="Title" required>
@@ -28,14 +28,12 @@
                             
                         <input class="submit" type="submit">
                 </form>
+                <div class="book-card">
+                </div>
             </div>
         </div>
 
-        <div class="book-card">
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-        </div>
+
         
 
         

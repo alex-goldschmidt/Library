@@ -3,9 +3,11 @@ const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
+const bookWrapper = document.querySelector('.books-wrapper');
 
-const bookCard = document.querySelector('.book-card');
-const bookCardClone = bookCard.cloneNode(true);
+
+let bookCard = document.querySelector('.book-card');
+const bookCardClone = bookCard.cloneNode(false);
 
 const submit = document.querySelector('[type=submit]');
 form.addEventListener('submit', addBookToLibrary);
@@ -13,34 +15,22 @@ form.addEventListener('submit', addBookToLibrary);
 
 
 const addBook = document.querySelector('.add-book');
-const modalOverlay = document.querySelector('.modal-overlay');
 
 addBook.addEventListener('click', function() {
-    modalOverlay.classList.add('overlay-active');
     form.style.display = 'flex';
-    });
-
-
-  submit.addEventListener("click", function () {
-    form.style.display = 'none';
-    bookCard.style.display = 'flex';
-    bookCard.style.flexDirection = 'row';
-    if (bookCard.style.display === 'flex'); {
-        submit.addEventListener("click", function() {
-          bookCard.after(bookCardClone);
-          bookCardClone.style.display = 'flex';
-          bookCardClone.style.flexDirection = 'row';
-        })
-      }
-    }
-   );
-
+  });
 
 
 //store Book data in this array
 let myLibrary = [
 
 ];
+
+submit.addEventListener("click", function () {
+  form.style.display = 'none';
+  bookCard.style.display = 'flex';
+  }
+);
 
 
 function Book (title, author, pages) {
@@ -54,18 +44,20 @@ function Book (title, author, pages) {
 //create custom book data through input boxes in html form
 function addBookToLibrary() {
     const newBook = new Book(title.value, author.value, pages.value);
-     myLibrary.push(newBook);
-     arrayDisplay();
-     console.log(myLibrary);
+    myLibrary.push(newBook);
+    arrayDisplay(myLibrary, bookWrapper);
+    console.log(myLibrary);
+    this.reset();
       };
 
  //Loop through myLibrary Array and display each book on the page
- function arrayDisplay() {
-  myLibrary.forEach((book) => {
-    bookCard.innerHTML += "Title: " + book.title + "<br>" + "<br>";
-    bookCard.innerHTML += "By: " + book.author + "<br>" + "<br>";
-    bookCard.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>";
-  })
-};
 
- 
+ function arrayDisplay() {
+  const book = myLibrary.at(-1); //gets last value of array
+  const bookCardList = document.querySelectorAll('.book-card');
+  const card = Object.values(bookCardList).pop(); //removes--> returns last array element
+
+  card.innerHTML += "Title: " + book.title + "<br>" + "<br>";
+  card.innerHTML += "By: " + book.author + "<br>" + "<br>";
+  card.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>" + "<hr>";
+ };

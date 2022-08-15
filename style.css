@@ -34,8 +34,25 @@
 .book-card {
     display: none;
     flex-direction: column;
-    height: 200px;
-    width: 200px;
-    border: solid;
+    margin-top: 20px;
+    background: blue;
+    color: white;
+    position: relative;
+}
+
+.books-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background: blue;
+}
+
+.toggle-on {
+    display: block;
+}
+
+hr {
+    margin-left: -5px;
+    margin-right: -5px;
+    border-bottom: 10px solid white;
 }
 
