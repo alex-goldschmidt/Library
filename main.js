@@ -4,17 +4,17 @@ const pages = document.querySelector('#pages');
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
 const bookWrapper = document.querySelector('.books-wrapper');
+const remove = document.querySelector('.remove');
 
 
 let bookCard = document.querySelector('.book-card');
-const bookCardClone = bookCard.cloneNode(false);
 
-const submit = document.querySelector('[type=submit]');
+const submit = document.querySelector('[type=submit]'); //submit book to library
 form.addEventListener('submit', addBookToLibrary);
 
 
 
-const addBook = document.querySelector('.add-book');
+const addBook = document.querySelector('.add-book'); //fill out form to submit book
 
 addBook.addEventListener('click', function() {
     form.style.display = 'flex';
@@ -59,5 +59,6 @@ function addBookToLibrary() {
 
   card.innerHTML += "Title: " + book.title + "<br>" + "<br>";
   card.innerHTML += "By: " + book.author + "<br>" + "<br>";
-  card.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>" + "<hr>";
+  card.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>"
+  + "<button id=\"remove\" onclick = removeBookFromLibrary(event)>remove</button>" + "<hr>";
  };

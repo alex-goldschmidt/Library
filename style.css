@@ -1,14 +1,16 @@
 .header {
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 45px;
+    font-family: cursive;
 }
 
 * {
     margin: 5px;
+    background: #39CCCC;
 }
 
-.container {
+.formContainer {
     display: grid;
     justify-content: center;
 }
@@ -23,27 +25,38 @@
     flex-direction: column;
     padding: 20px;
     border: solid;
+    background: #d9af64;
+}
+
+input {
+    border-radius: 15px;
 }
 
 .add-book {
-    margin-left:47.2%;
+    margin-left:47%;
     margin-right:47%;
     position: relative;
+    font-family: cursive;
+    border-radius: 15px;
+    font-size: 20px;
 }
 
 .book-card {
     display: none;
     flex-direction: column;
     margin-top: 20px;
-    background: blue;
-    color: white;
+    background: #d9af64;
+    color: black;
     position: relative;
+    margin-bottom: -1px;
+    border: solid;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .books-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    background: blue;
 }
 
 .toggle-on {
@@ -51,8 +64,10 @@
 }
 
 hr {
-    margin-left: -5px;
-    margin-right: -5px;
-    border-bottom: 10px solid white;
+    margin-left: 0px;
+    margin-right: -1px;
+    border-bottom: 1px solid black;
+    width: 200px;
+    margin-bottom: -1px;
 }
 

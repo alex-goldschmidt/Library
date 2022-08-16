@@ -9,31 +9,30 @@
 </head>
 <body>
     <div class="header">
-        <div class="title">Library</div>
+        <div class="title">My Library</div>
     </div>
     
 <button class="add-book">Add Book</button>
 
-        <div class="container">
-            <div class="books-wrapper">
-                <form id="form" class="modal" method="post" onsubmit="return false">
-                        <label for="title"></label>
-                        <input type="text" id="title"  name="title" placeholder="Title" required>
+        <div class="formContainer">
+            <form id="form" method="post" onsubmit="return false">
+                <label for="title"></label>
+                <input type="text" id="title"  name="title" placeholder="Title" required>
+    
+                <label for="author"></label>
+                <input type="text" id="author" name="author" placeholder="Author" required>
             
-                        <label for="author"></label>
-                        <input type="text" id="author" name="author" placeholder="Author" required>
+                <label for="pages"></label>
+                <input type="number" id="pages" name="pages" placeholder="Pages" required>
                     
-                        <label for="pages"></label>
-                        <input type="text" id="pages" name="pages" placeholder="Pages" required>
-                            
-                        <input class="submit" type="submit">
-                </form>
-                <div class="book-card">
-                </div>
+                <input class="submit" type="submit">
+        </form>
+        
+        <div class="books-wrapper">
+            <div class="book-card">
             </div>
         </div>
-
-
+        </div>
         
 
         
