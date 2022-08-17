@@ -4,8 +4,13 @@ const pages = document.querySelector('#pages');
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
 const bookWrapper = document.querySelector('.books-wrapper');
-const remove = document.querySelector('.remove');
 
+const remove = document.querySelector('#remove');
+remove.addEventListener('click', function(){
+  myLibrary.pop(bookCard);
+  myLibrary.splice(bookCard, 1);
+  bookCard.style.display = 'none';
+})
 
 let bookCard = document.querySelector('.book-card');
 
@@ -42,7 +47,8 @@ function Book (title, author, pages) {
 };
 
 //create custom book data through input boxes in html form
-function addBookToLibrary() {
+function addBookToLibrary(e) {
+    e.preventDefault();
     const newBook = new Book(title.value, author.value, pages.value);
     myLibrary.push(newBook);
     arrayDisplay(myLibrary, bookWrapper);
@@ -51,14 +57,15 @@ function addBookToLibrary() {
       };
 
  //Loop through myLibrary Array and display each book on the page
-
- function arrayDisplay() {
-  const book = myLibrary.at(-1); //gets last value of array
+function arrayDisplay() {
+ const book = myLibrary.at(-1); //gets last value of array
   const bookCardList = document.querySelectorAll('.book-card');
   const card = Object.values(bookCardList).pop(); //removes--> returns last array element
 
+
   card.innerHTML += "Title: " + book.title + "<br>" + "<br>";
   card.innerHTML += "By: " + book.author + "<br>" + "<br>";
-  card.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>"
-  + "<button id=\"remove\" onclick = removeBookFromLibrary(event)>remove</button>" + "<hr>";
- };
+  card.innerHTML += "Pages: " + book.pages + " pages" + "<br>" + "<br>" + "<hr>"; 
+};
+
+  
