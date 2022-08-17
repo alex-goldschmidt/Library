@@ -11,11 +11,15 @@
     <div class="header">
         <div class="title">My Library</div>
     </div>
-    
-<button class="add-book">Add Book</button>
+
+<div class="buttons">
+    <button class="add-book">Add Book</button>
+        <button id="remove">Remove All Books</button>
+    </div>
+
 
         <div class="formContainer">
-            <form id="form" method="post" onsubmit="return false">
+            <form id="form" method="post">
                 <label for="title"></label>
                 <input type="text" id="title"  name="title" placeholder="Title" required>
     
@@ -37,6 +41,6 @@
 
         
 
-        <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

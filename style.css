@@ -42,7 +42,7 @@ input {
 }
 
 .book-card {
-    display: none;
+    display: none; 
     flex-direction: column;
     margin-top: 20px;
     background: #d9af64;
@@ -69,5 +69,15 @@ hr {
     border-bottom: 1px solid black;
     width: 200px;
     margin-bottom: -1px;
+}
+
+.buttons {
+    display: inline-flex;
+    margin-left: 450px;
+}
+
+#remove {
+    font-family: cursive;
+    font-size: 20px;
 }
 
